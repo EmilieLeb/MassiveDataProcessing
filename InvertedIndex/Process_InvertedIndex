@@ -1,0 +1,9 @@
+#Compile 
+
+javac  -classpath /usr/local/hadoop/share/hadoop/common/hadoop-common-2.7.3.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.3.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-cli-1.2.jar -d /home/emilie/Desktop/invertedindf *.java
+
+#Convert into Jar File
+jar -cvf invertedindj.jar -C /home/emilie/Desktop/invertedindf/invertedindc .
+
+#Run JAR File
+bin/hadoop jar /home/emilie/Desktop/invertedindf/invertedindj.jar InvertedIndex /user/inputdata outputwc

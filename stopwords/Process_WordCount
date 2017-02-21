@@ -1,0 +1,21 @@
+#Compile 
+
+javac  -classpath /usr/local/hadoop/share/hadoop/common/hadoop-common-2.7.3.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.3.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-cli-1.2.jar -d /home/emilie/Desktop/wordcountf *.java
+
+#Convert into Jar File
+jar -cvf wordcountj.jar -C /home/emilie/Desktop/wordcountf/wordcountc .
+
+#Run JAR File
+
+# 10 reducers
+bin/hadoop jar /home/emilie/Desktop/wordcountf/wordcountj.jar WordCountpro /user/inputdataWC outputwc 10 0 0 
+
+# 10 reducers and a combiner
+bin/hadoop jar /home/emilie/Desktop/wordcountf/wordcountj.jar WordCountpro /user/inputdataWC outputwc 10 1 0 
+
+# 10 reducers and a combiner and a compression
+bin/hadoop jar /home/emilie/Desktop/wordcountf/wordcountj.jar WordCountpro /user/inputdataWC outputwc 10 1 1 
+
+# 50 reducers and a combiner and a compression
+bin/hadoop jar /home/emilie/Desktop/wordcountf/wordcountj.jar WordCountpro /user/inputdataWC outputwc 50 1 1 
+

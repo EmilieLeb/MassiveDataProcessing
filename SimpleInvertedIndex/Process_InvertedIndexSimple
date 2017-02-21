@@ -1,0 +1,9 @@
+#Compile 
+
+javac  -classpath /usr/local/hadoop/share/hadoop/common/hadoop-common-2.7.3.jar:/usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.7.3.jar:/usr/local/hadoop/share/hadoop/common/lib/commons-cli-1.2.jar -d /home/emilie/Desktop/invertedsimplef *.java
+
+#Convert into Jar File
+jar -cvf invertedsimplej.jar -C /home/emilie/Desktop/invertedsimplef/invertedsimplec .
+
+#Run JAR File
+bin/hadoop jar /home/emilie/Desktop/invertedsimplef/invertedsimplej.jar InvertedIndex /user/inputdataIISimple outputwc
